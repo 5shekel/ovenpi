@@ -29,22 +29,9 @@ void setup() {
   // initiate serial communication:
   Serial.begin(9600);
   Serial.setTimeout(10);
-  // initialize the LED pins as outputs:
-  pinMode(redPin, OUTPUT);
-  pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
-  pinMode(8, OUTPUT);
-  digitalWrite(8, LOW);
-  // set the color pins high to turn off the LED:
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, LOW);
-
 }
+
 void loop() {
-
-  int currentPin = 0; // current pin to be faded
-
   // if there's any serial data in the buffer, read a byte:
   if (Serial.available() > 0) {
     int inByte = Serial.read();
@@ -67,13 +54,8 @@ void loop() {
     // if you have a legitimate pin number,
     // use the parseInt function to listen for a level:
     if (currentPin != 0) {
-      int brightness = Serial.parseInt();
-      // map the result to a level from 0 to 255
-      brightness = map(brightness, 0, 100, 0, 255);
-
-      // set the brightness for this color:
-      analogWrite(currentPin, brightness);
-      Serial.println(brightness);
+      int input = Serial.parseInt();
+      Serial.println(input);
     }
   }
 }
