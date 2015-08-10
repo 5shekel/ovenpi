@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <script type="text/javascript">
-		function setMsg(button){
-			var req = new XMLHttpRequest();
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>oven serial demo</title>
+	<link rel="stylesheet" href="includes/jquery.mobile-1.4.0.min.css">
+	<script src="includes/jquery.js"></script>
+	<script src="includes/jquery.mobile-1.4.0.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            if (window.console) console.log($(this).attr('data-value'));
+            var req = new XMLHttpRequest();
 			// GET /output/value, and make an asynchronous request:
-			req.open("GET", '/output/' + button.value, true);
+			req.open("GET", '/output/' + $(this).attr('data-value'), true);
 			// close the request:
 			req.send( null );
-		}
-	 </script>
-	 </head>
-	<body>
-	<button type="button" onclick="setMsg(this);" value="start">1</button><br>		<br>
-	<button type="button" onclick="setMsg(this);" value="stop">2</button><br><br>
-	<button type="button" onclick="setMsg(this);" value="2">3</button><br><br>
-	</body>
+        });
+    });
+  </script>
+</head>
+<body>
+ 
+    <button data-value="start"> start</button>
+    <button data-value="stop"> stop </button>
+ 
+</body>
 </html>
+
