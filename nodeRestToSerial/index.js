@@ -11,7 +11,7 @@ app.serveFiles("public");			// serve all static HTML files from /public
 // respond to web GET requests for the index.html page:
 app.route('/', sendIndexPage);
 app.route('/index*', sendIndexPage);
-// take anything that begins with /output as an LED request:
+// take anything that begins with /output as a request:
 app.route('/output/:value', sendToSerial);
 
 // now that everything is configured, start the server:
@@ -26,7 +26,7 @@ console.log("opening serial port: " + portName);
 
 // open the serial port. Uses the command line parameter:
 var myPort = new SerialPort(portName, { 
-	baudRate: 57600,
+	baudRate: 115200,
 	// look for return and newline at the end of each data packet:
 	parser: serialport.parsers.readline("\r\n") 
 });
@@ -42,11 +42,11 @@ function sendIndexPage(request) {
 
 function sendToSerial(request) {
   // get the parameters from the URL:
-  var brightnessCommand = request.params.value
-  console.log("received "+ brightnessCommand);
+  var command = request.params.value
+  console.log("received "+ "<"+command+">");
 
   // send it out the serial port:
-  myPort.write(brightnessCommand);
+  myPort.write("<"+command+">\r\n");
   // send the data and close the connection:
-  request.respond(brightnessCommand);
+  request.respond(command);
 }
