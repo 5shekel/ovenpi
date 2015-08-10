@@ -26,7 +26,7 @@ console.log("opening serial port: " + portName);
 
 // open the serial port. Uses the command line parameter:
 var myPort = new SerialPort(portName, { 
-	baudRate: 115200,
+	baudRate: 57600,
 	// look for return and newline at the end of each data packet:
 	parser: serialport.parsers.readline("\r\n") 
 });
@@ -46,7 +46,7 @@ function sendToSerial(request) {
   console.log("received "+ "<"+command+">");
 
   // send it out the serial port:
-  myPort.write("<"+command+">\r\n");
+  myPort.write('<'+command+'>\r\n');
   // send the data and close the connection:
   request.respond(command);
 }

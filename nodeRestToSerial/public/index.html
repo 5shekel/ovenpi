@@ -18,13 +18,29 @@
 			req.send( null );
         });
     });
-  </script>
+
+    </script>
 </head>
 <body>
- 
+    
+<br><br>
+    <!--
+        Command Protocol:
+        <start>\r\n    Start micro
+        <stop>\r\n     Stop micro
+        <popcorn>\r\n  Stop, Popcorb, Start
+        <p10s>\r\n     Add 10 second to time, set time variable
+        <p30s>\r\n     +30s time
+    -->
     <button data-value="start"> start</button>
     <button data-value="stop"> stop </button>
- 
+    <button data-value="popcorn"> popcorn </button>
+    <button data-value="p10s"> p10s </button>
+    <button data-value="p30s"> p30s </button>
+    <div style="text-align : center;">
+     <iframe id="vidf" src='http://10.10.10.14:8080/stream' width="680" height="500" frameborder="0"><br><br>
+    </iframe></div>
 </body>
 </html>
+
 
