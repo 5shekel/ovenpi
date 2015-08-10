@@ -1,28 +1,23 @@
 restToSerial.js
 
-This example allows you to send messages to an Arduino microcontroller
-from a web page using a RESTian communications scheme. The server application
-is written in node.js using the express.js web framework and node-serialport
-for serial communications.
-
-
-To use this, you should read up on <a href="nodejs.org">node.js</a>
+send messages to an Arduino and show an iframe with an mjpeg stream
 
 To install it:
 * make sure you've installed node.js
-* either clone the project in git or download it
 * from the command line,change directories to the directory where you downloaded the project
 
 Enter the following:
 
 	npm install 
 
-You should end up with a new directory called node_modules, which will include socket.io, node-serialport, and express.js.
+You should end up with a new directory called node_modules, which will include socket.io, node-serialport, and servi.
 
 To run it, enter:
 
-	node restToSerial.js portname
+	node index.js COM5 
 	
-Where portname is the name of your serial port.
+Where portname is the name of your serial port. on linux it will be something like /dev/ttyUSB0
 
-ripped from https://github.com/tigoe/NetworkExamples
+more info:
+igoe node examples -  https://github.com/tigoe/NodeExamples and using jQuary
+a good overview and example - https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-communication-with-node-js/
