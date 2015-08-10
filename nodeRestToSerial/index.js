@@ -12,7 +12,7 @@ app.serveFiles("public");			// serve all static HTML files from /public
 app.route('/', sendIndexPage);
 app.route('/index*', sendIndexPage);
 // take anything that begins with /output as an LED request:
-app.route('/output/:value/', sendToSerial);
+app.route('/output/:value', sendToSerial);
 
 // now that everything is configured, start the server:
 app.start();	

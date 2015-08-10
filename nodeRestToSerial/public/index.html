@@ -2,14 +2,6 @@
 <html>
     <head>
     <script type="text/javascript">
-		function setColor(slider, textbox) {
-			textbox.value = slider.value;
-			var request = new XMLHttpRequest();
-				// GET /output/color/level, and make an asynchronous request:
-				request.open( "GET", '/output/' + textbox.id + "/" + slider.value, true );
-				// close the request:
-				request.send( null );
-		}
 		function setMsg(button){
 			var req = new XMLHttpRequest();
 			// GET /output/value, and make an asynchronous request:
@@ -20,9 +12,8 @@
 	 </script>
 	 </head>
 	<body>
-		
-	<button type="button" onclick="setMsg(this);" value="1"> 1 </button><br>
-	<input type="range" id="redSlider"  onchange="setColor(this, r);">
-	<input type="text" id="r" size=2><br>
+	<button type="button" onclick="setMsg(this);" value="1">1</button><br>
+		<br>
+	<button type="button" onclick="setMsg(this);" value="2">2</button><br>
 	</body>
 </html>
