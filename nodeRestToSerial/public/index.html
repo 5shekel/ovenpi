@@ -1,46 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>oven serial demo</title>
-	<link rel="stylesheet" href="includes/jquery.mobile-1.4.0.min.css">
-	<script src="includes/jquery.js"></script>
-	<script src="includes/jquery.mobile-1.4.0.min.js"></script>
-  
-  <script>
-    $(document).ready(function(){
-        $("button").click(function(){
-            if (window.console) console.log($(this).attr('data-value'));
-            var req = new XMLHttpRequest();
-			// GET /output/value, and make an asynchronous request:
-			req.open("GET", '/output/' + $(this).attr('data-value'), true);
-			// close the request:
-			req.send( null );
-        });
-    });
 
-    </script>
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Index</title>
+  <meta name="description" content="">
+  <meta name="author" content="user">
+  <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  -->
+	<link rel="stylesheet" type="text/css" href="includes/style.css" />
+	<script type="text/javascript" src="includes/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="includes/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="includes/script.js"></script>
+  
 </head>
+
 <body>
-    
-<br><br>
-    <!--
-        Command Protocol:
-        <start>\r\n    Start micro
-        <stop>\r\n     Stop micro
-        <popcorn>\r\n  Stop, Popcorb, Start
-        <p10s>\r\n     Add 10 second to time, set time variable
-        <p30s>\r\n     +30s time
-    -->
-    <button data-value="start"> start</button>
-    <button data-value="stop"> stop </button>
-    <button data-value="popcorn"> popcorn </button>
-    <button data-value="p10s"> p10s </button>
-    <button data-value="p30s"> p30s </button>
-    <div style="text-align : center;">
-     <iframe id="vidf" src='http://10.10.10.14:8080/stream' width="680" height="500" frameborder="0"><br><br>
-    </iframe></div>
+  <div id="wrapper" data-role="page">
+    	
+		<div id="streambox">
+			<div id="power">
+				<img src="images/power.png" />
+			</div>
+			
+			<iframe src='http://10.10.10.14:8080/stream' id="stream" frameborder="0"></iframe>
+			
+		</div> 
+		<div id="controls">
+		    <form>
+				<input  type="number" name="quantity" min="0" max="30" value="0" id="min" readonly>
+				<input  type="number" name="quantity" min="0" max="59" value="00" id="sec" readonly>
+			</form>
+			<div id="plus">
+				<div id="add10" class="clickable" data-value="p10s">
+					+10
+				</div>
+				<div id="add30" class="clickable" data-value="p30s">
+					+30
+				</div>
+				
+			</div>
+			<div id="startstop1">
+				<div id="startstop" class="clickable" data-value="start">
+					Start
+				</div>
+				<div id="clear" class="clickable" data-value="stop">
+					<img src="images/clear.png" />
+				</div>
+			</div>
+		</div>
+		<div id="lower">
+			<div id="popcorn" class="clickable" data-value="popcorn" style="color:#7cb342; font-weight: bold;"><p>Popcorn</p></div><div><p>Potato</p></div><div><p>Single Entrees</p></div>
+			<div><p>Power Defrost</p></div><div><p>Soften Melt</p></div><div><p>Ready Meal</p></div>
+			<div class="diff"><img src="images/meat.png" /><p>Meat/ Polutry</p></div><div class="diff"><img src="images/carrot.png" /><p>Healthy Food</p></div><div class="diff"><img src="images/snack.png" /><p>Snack</p></div>
+		</div>
+	
+  </div>
 </body>
 </html>
-
-

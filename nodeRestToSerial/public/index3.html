@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>oven serial demo</title>
+	<link rel="stylesheet" href="includes/jquery.mobile-1.4.0.min.css">
+	<script src="includes/jquery.js"></script>
+	<script src="includes/jquery.mobile-1.4.0.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            if (window.console) console.log($(this).attr('data-value'));
+            var req = new XMLHttpRequest();
+			// GET /output/value, and make an asynchronous request:
+			req.open("GET", '/output/' + $(this).attr('data-value'), true);
+			// close the request:
+			req.send( null );
+        });
+    });
+
+    </script>
+</head>
+<body>
+    
+<br><br>
+    <!--
+        Command Protocol:
+        <start>\r\n    Start micro
+        <stop>\r\n     Stop micro
+        <popcorn>\r\n  Stop, Popcorb, Start
+        <p10s>\r\n     Add 10 second to time, set time variable
+        <p30s>\r\n     +30s time
+    -->
+    <button data-value="start"> start</button>
+    <button data-value="stop"> stop </button>
+    <button data-value="popcorn"> popcorn </button>
+    <button data-value="p10s"> p10s </button>
+    <button data-value="p30s"> p30s </button>
+    <div style="text-align : center;">
+     <iframe id="vidf" src='http://10.10.10.14:8080/stream' width="680" height="500" frameborder="0"><br><br>
+    </iframe></div>
+</body>
+</html>
+
+
