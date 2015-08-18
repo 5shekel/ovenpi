@@ -23,12 +23,12 @@ git clone https://github.com/5shekel/ovenpi.git
 cd ovenpi/nodeRestToSerial
 npm install
 sudo mv /etc/uv4l/uv4l-raspicam.conf /etc/uv4l/uv4l-raspicam.conf.default
-sudo ln -s uv4l-raspicam.conf /etc/uv4l/uv4l-raspicam.conf
+sudo ln -s etc/uv4l-raspicam.conf /etc/uv4l/uv4l-raspicam.conf
 sudo service uv4l_raspicam restart
 
 #run node process, make sure the arduino is connected (default to /dev/ttyUSB0)
 sudo chmod +x play.sh
-echo sudo ./play.sh | sudo tee -a ~/.bashrc 
+echo sudo ./home/pi/ovenpi/nodeRestToSerial/etc/play.sh | sudo tee -a ~/.bashrc 
 sudo reboot now
 ```
 
