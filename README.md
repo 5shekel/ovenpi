@@ -36,6 +36,8 @@ sudo nano /etc/inittab
 #1:2345:respawn:/sbin/getty 115200 tty1
 1:2345:respawn:/bin/login -f pi tty1 </dev/tty1 >/dev/tty1 2>&1
 
+#change to correct ip for camera strea,
+mybe http://stackoverflow.com/a/8440736/184085
 sudo reboot now
 ```
 
