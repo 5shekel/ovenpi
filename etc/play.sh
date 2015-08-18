@@ -19,7 +19,7 @@ fi
 PID=`ps -ef | grep ${SCRIPTNAME} | head -n1 |  awk ' {print $2;} '`
 echo ${PID} > ${PIDFILE}
 
-sudo /opt/node/bin/node /home/pi/ovenpi/nodeRestToSerial/index.js /dev/ttyUSB0
+sudo /opt/node/bin/node /home/pi/ovenpi/nodeRestToSerial/index.js /dev/ttyACM0
 
 if [ -f ${PIDFILE} ]; then
     rm ${PIDFILE}
