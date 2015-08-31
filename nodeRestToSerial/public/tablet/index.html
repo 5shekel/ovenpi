@@ -20,7 +20,20 @@
 </head>
 
 <body>
-  <div id="wrapper" data-role="page">
+	<div id="left">
+		<div id="streambox2">
+			<img src="http://10.10.10.14:8080/stream/video.mjpeg" id="stream">
+			<img id="content">
+		</div>
+		<div id="menu">
+			<div><img src="images/meat_poultry.png" data-value="images/meat_poultry_content.png" ></div>
+			<div><img src="images/healthy_food.png" data-value="images/healthy_food_content.png" ></div>
+			<div><img src="images/snack.png" data-value="images/snack_content.png" class="clickable2"></div>
+			<div><img src="images/cook_guide.png" data-value="images/cooking_guide_content.png" ></div>
+		</div>
+		
+	</div>
+  	<div id="wrapper" data-role="page">
     	
 		
 		<div id="controls">
@@ -30,10 +43,10 @@
 			</form>
 			<div id="plus">
 				<div id="add10" class="clickable" data-value="p10s">
-					+10
+					
 				</div>
 				<div id="add30" class="clickable" data-value="p30s">
-					+30
+					
 				</div>
 				
 			</div>
@@ -50,17 +63,15 @@
 			<div id="power">
 				<img src="images/power.png" />
 			</div>
-			<img src="http://10.10.10.14:8080/stream/video.mjpeg" id="stream">
+			
 			<!--<iframe src='http://10.10.10.14:8080/stream' id="stream" frameborder="0"></iframe>
 			-->
 		</div> 
 		<div id="lower">
 			<h1>
-				Sensor Cook
-			</h1>
+							</h1>
 			<div id="popcorn" class="clickable" data-value="popcorn" style="color:#7cb342; "></div><div></div><div></div>
-			<div></div><div></div><div></div>
-			<div ></div><div ></div><div></div>
+			<div></div><div></div><div class="fullscreen"></div>
 		</div>
 	
   </div>

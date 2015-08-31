@@ -10,7 +10,7 @@
 
 
 *{
-	margin: 0; padding: 0; font-family:Robot; color: #4d4d4d; 
+	margin: 0; padding: 0; font-family:Robot; color: #f0f0f0; 
 }
 html{
 	height:100%;
@@ -22,11 +22,33 @@ body {
 	height:100%;
 
 }
-#wrapper{
-	margin:auto;
-	width:100%;
-	background-color: #f7f8f8;
+#left{
+	float:left;
+	width:69.6%;
 	text-align: center;
+	background-color:#333333;
+}
+#streambox2{
+	width: 100%;
+	
+}
+#menu{
+	width: 100%;
+}
+#menu > div{
+	width:25%;
+	float:left;
+}
+#menu > div > img{
+	width:100%;
+	
+}
+#wrapper{
+	float:left;
+	width:30.4%;
+	background-color: #5d5d5d;
+	text-align: center;
+	outline:none;
 }
 #controls{
 	width:100%;
@@ -45,7 +67,7 @@ form{
 .inp{
 	width: 44%;
 	float: left;
-	margin-right: 5%;
+	margin-right: 8%;
 	
 }
 input[type="number"] {
@@ -54,27 +76,31 @@ input[type="number"] {
 	font-size: 390%;
 	background:none;
 	border: none;
-	font-weight:lighter;
+	font-weight:bold;
 }
 #plus{
 	width: 11.45%;
 	float: left;
+	margin-left:1.5%;
 }
 #add30 {
-	border:solid 1px #cccccc;
 	font-size: 250%;
 	text-align: center;
 	line-height: 60px;
 	cursor : pointer;
-	background-color: #fafafa;
+	background-image: url("../images/plus30.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 #add10{
-	border:solid 1px #cccccc;
 	font-size: 250%;
 	text-align: center;
 	line-height: 60px;
 	cursor : pointer;
-	background-color: #fafafa;
+	background-image: url("../images/plus10.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
 }
 
 #startstop{
@@ -82,17 +108,19 @@ input[type="number"] {
 	width: 75%;
 	float:left;
 	color: #7cb342;
+	font-weight:bold;
+
 	
 }
 #startstop1{
-	border:solid 2px  #cccccc;
+	border:solid 1px  #1a1a1a;
 	font-size: 280%;
 	width: 66.3%;
 	margin-left:17%;
 	line-height: 60px;
 	cursor : pointer;
 	float:left;
-	background-color: #fafafa;
+	background-color: #464646;
 }
 #clear{
 	width: 24%;
@@ -106,7 +134,7 @@ input[type="number"] {
 
 #streambox{
 	text-align:center;
-	border:solid 1px;
+	background-color: #4d4d4d;
 }
 
 #stream{
@@ -144,9 +172,6 @@ input[type="number"] {
 	float:left;
 }
 #popcorn{
-	background-image: url("../images/popcorn_gray.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
 }
 .ui-loader{
 	display:none !important;
