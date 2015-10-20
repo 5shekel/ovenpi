@@ -36,6 +36,28 @@ sudo nano /etc/inittab
 #1:2345:respawn:/sbin/getty 115200 tty1
 1:2345:respawn:/bin/login -f pi tty1 </dev/tty1 >/dev/tty1 2>&1
 
+##network
+#edit /etc/netwrok/intrfaces
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet static
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+address 192.168.0.177
+netmask 255.255.255.0
+gateway 192.168.0.254
+
+edit /etc/wpa_supplicant/wpa_supplicant.conf
+#add at bottom
+network{
+ssid="ovenpi2"
+psk="xxxxxxx"
+}
+
+#restart network
+sudo /etc/init.d/networking restart
+
+
 #change to correct ip for camera strea,
 mybe http://stackoverflow.com/a/8440736/184085
 sudo reboot now
